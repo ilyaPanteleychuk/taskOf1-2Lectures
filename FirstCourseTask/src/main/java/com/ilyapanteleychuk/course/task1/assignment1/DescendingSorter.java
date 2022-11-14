@@ -1,23 +1,17 @@
 package com.ilyapanteleychuk.course.task1.assignment1;
 
-import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 public class DescendingSorter {
     
-    public int[] descendingSort(int[] inputArray){
-        int[] outputArray = Arrays.stream(inputArray)
-                .filter(el -> el >= 0).toArray();
-        for(int i = 0; i < outputArray.length; i++){
-            int temp;
-            for(int j = i + 1; j < outputArray.length; j++){
-                if(outputArray[i] < outputArray[j]){
-                    temp = outputArray[i];
-                    outputArray[i] = outputArray[j];
-                    outputArray[j] = temp;
-                }
-            }
-        }
-        return outputArray;
+    public List<Integer> descendingSort(int[] inputArray){
+        List<Integer> outputList = IntStream.of(inputArray).boxed()
+                .collect(Collectors.toList());
+        return outputList.stream().filter(el -> el >= 0).sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
     }
 }

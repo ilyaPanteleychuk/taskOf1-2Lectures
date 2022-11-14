@@ -3,7 +3,7 @@ package com.ilyapanteleychuk.course.task1.assignment3.model;
 import java.util.Objects;
 
 
-public class Sphere extends GeometricalFigure {
+public class Sphere implements Shape {
     
     private double radius;
     
@@ -15,8 +15,8 @@ public class Sphere extends GeometricalFigure {
     }
     
     @Override
-    public void calculateVolume() {
-        this.volume =  Math.PI * Math.pow(radius, 3);
+    public double calculateVolume() {
+        return Math.PI * Math.pow(radius, 3);
     }
     
     public double getRadius() {
@@ -31,7 +31,6 @@ public class Sphere extends GeometricalFigure {
     public String toString() {
         return "Sphere{" +
                 "radius=" + radius +
-                ", volume=" + volume +
                 '}';
     }
     

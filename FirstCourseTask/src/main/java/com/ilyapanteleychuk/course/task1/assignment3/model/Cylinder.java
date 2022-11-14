@@ -3,7 +3,7 @@ package com.ilyapanteleychuk.course.task1.assignment3.model;
 import java.util.Objects;
 
 
-public class Cylinder extends GeometricalFigure{
+public class Cylinder implements Shape {
     
     private double radius;
     private double height;
@@ -14,8 +14,8 @@ public class Cylinder extends GeometricalFigure{
     }
     
     @Override
-    public void calculateVolume() {
-        this.volume = Math.PI * Math.pow(radius, 2) * height;
+    public double calculateVolume() {
+        return Math.PI * Math.pow(radius, 2) * height;
     }
     
     public double getRadius() {
@@ -39,7 +39,6 @@ public class Cylinder extends GeometricalFigure{
         return "Cylinder{" +
                 "radius=" + radius +
                 ", height=" + height +
-                ", volume=" + volume +
                 '}';
     }
     

@@ -3,7 +3,7 @@ package com.ilyapanteleychuk.course.task1.assignment3.model;
 import java.util.Objects;
 
 
-public class Cube extends GeometricalFigure {
+public class Cube implements Shape {
     
     private double side;
     
@@ -15,8 +15,8 @@ public class Cube extends GeometricalFigure {
     }
     
     @Override
-    public void calculateVolume() {
-        this.volume = Math.pow(side, 3);
+    public double calculateVolume() {
+        return Math.pow(side, 3);
     }
     
     public double getSide() {
@@ -31,7 +31,6 @@ public class Cube extends GeometricalFigure {
     public String toString() {
         return "Cube{" +
                 "side=" + side +
-                ", volume=" + volume +
                 '}';
     }
     
